@@ -32,8 +32,6 @@
          // SQL文を実行する
          $stmt->execute();
  
-         // header()関数を使ってselect.phpにリダイレクトさせる
-         header('Location: select.php');
          // header()関数を使ってusers.phpにリダイレクトさせる
          header('Location: users.php');
      } catch (PDOException $e) {

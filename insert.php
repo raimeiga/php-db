@@ -3,7 +3,11 @@
  $user = 'root';
  $password = '';
  
- // submitパラメータの値が存在するとき（「登録」ボタンを押したとき）の処理
+ /*submitパラメータの値が存在するとき（「登録」ボタンを押したとき）の処理
+ isset()= 変数に値がセットされているか調べる関数。値がセットされていればTRUEを、そうでなければFALSEを返す。
+       「$_POST['submit']に値がセットされている=フォームが送信された（送信ボタンのname属性がsubmitであるため）」
+        ということなので、if (isset($_POST['submit'])) { ～ }を記述することで「登録」ボタンを押したときにのみ処理
+        を行う。*/
  if (isset($_POST['submit'])) {
      try {
          $pdo = new PDO($dsn, $user, $password);
