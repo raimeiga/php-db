@@ -32,8 +32,6 @@
          // SQL文を実行する
          $stmt->execute();
  
-         // header()関数を使ってselect.phpにリダイレクトさせる
-         header('Location: select.php');
          // header()関数を使ってusers.phpにリダイレクトさせる
          header('Location: users.php');
      } catch (PDOException $e) {
@@ -73,18 +71,15 @@
     exit('idパラメータの値が存在しません。');
 }
 ?>
-
  
  <!DOCTYPE html>
- <html lang="ja">
- 
+ <html lang="ja"> 
  <head>
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <title>PHP+DB</title>
      <link rel="stylesheet" href="css/style.css">
- </head>
- 
+ </head> 
  <body>
      <h1>ユーザー更新</h1>
      <p>更新する内容を入力してください。</p>

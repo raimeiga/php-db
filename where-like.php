@@ -7,7 +7,11 @@
  try {
      $pdo = new PDO($dsn, $user, $password);
  
-     // keywordパラメータの値が存在すれば（「検索」ボタンを押したとき）、その値を変数$keywordに代入する    
+     /* keywordパラメータの値が存在すれば（「検索」ボタンを押したとき）、その値を変数$keywordに代入する  
+        isset()= 変数に値がセットされているか調べる関数。値がセットされていればTRUEを、そうでなければFALSEを返す。
+       「$_POST['keyword']に値がセットされている=「ふりがなで検索」と表示されたplaceholderに文字が書かれている
+        ということなので、if (isset($_POST['keyword'])) { ～ }を記述することでplaceholderに文字が書かれている状態
+        で、検索ボタン（"submit"）が押された場合のみ処理を行う。*/
      if (isset($_GET['keyword'])) {
         $keyword = $_GET['keyword'];
     } else {
