@@ -55,10 +55,17 @@
                  <td>{$result['address']}</td>
                  <td><a href='update.php?id={$result['id']}'>編集</a></td>
                  <td><a href='delete.php?id={$result['id']}'>削除</a></td>
-         </tr>
+         </tr> 
          ";
-             echo $table_row;
+         echo $table_row;
          }
+
+          /* ↑ <td><a href='update.php?id={$result['id']}'>編集</a></td>について
+                  ?の後ろのidはパラメータ、{$result['id']}はパラメータの値。
+                  URLの末尾にパラメータとその値をつけることで、フォームを使わなくても
+                  GETメソッドで値を渡すことができる。情報の送り先update.phpファイルに、
+                  if (isset($_GET['id'])などと記述し、['id']の部分でこちらから送った
+                  情報を受け取るイメージで書く。*/
          ?>
      </table>
  </body>
