@@ -6,6 +6,7 @@
     <title>PHP+DB</title>
 </head>
 
+
 <body>
     <p>
         <?php
